@@ -60,7 +60,11 @@ const Main = () => {
     const indexOfFirstPage = indexOfLastPost - postsPerPage;
     const currentPosts = posts.slice(indexOfFirstPage, indexOfLastPost);
 
-    const paginate = pageNumber => setCurrentPage(pageNumber);
+    const paginate = (e, pageNumber) => {
+        e.preventDefault();
+        window.scroll(0,0);
+        setCurrentPage(pageNumber);
+    }
 
      return (
         <div>
